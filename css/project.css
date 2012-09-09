@@ -1,0 +1,112 @@
+/**
+ * This support file is used to style the WYSIWYG editor in the CMS
+ */
+#grid {
+border:0px solid red;
+}
+#Form_ProjectForm {
+width:100% !important;
+}
+.ss-gridfield-table {
+width:100%;
+}
+#grid .main {
+padding:10px;
+}
+
+.standard {
+width:100%;
+
+}
+.standard td {
+border:1px solid #ccc;
+
+padding:5px;
+}
+.standard th {
+	background: #333333;
+		color: #fff;
+		font-size: 1.2em;
+		padding-right:5px;
+}
+.standard tr:nth-child(even) {
+      background-color: #ededed
+  }
+.standard .title {
+color:#0066CC;
+font-weight:bold;
+background: #eee;
+}
+#overviewtable {
+float:right;
+border:1px solid #ccc;
+}
+#overviewtable td{
+border:1px solid #ccc;
+padding:5px;
+text-align:right;
+}
+#overviewtable th{
+text-transform:capitalize;
+text-align:left;
+padding:5px;
+}
+.lhalf {
+float:left;
+width:38%;
+border:1px solid #ccc;
+padding:5px;
+margin:37px 0 0 0;
+}
+.rhalf table {
+float:right;
+display:inline-block;
+padding-left:10px;
+padding-right:10px;
+list-style:none;
+border:1px solid #ccc;
+min-height:110px;
+margin: 5px;
+
+}
+.rhalf table th {
+text-align:left;
+padding-right:10px;
+
+}
+
+.rhalf {
+
+float:right;
+border:0px solid red;
+margin:10px 0 0 0 ;
+}
+
+.rhalf table .title {
+text-align:center;
+border-bottom:1px solid #ccc;
+}
+.clear {
+clear:both;
+}
+.red {
+color:red;
+}
+.comp {
+color:#009900;
+background: #E1F9CC;
+}
+
+.info, #Tasks{
+clear:both;
+margin:10px ;
+padding:10px 0;
+border:0px solid red;
+}
+.info h3, #Tasks h3 {
+text-align:center;
+Border-top:1px solid #ccc;
+}
+.info ul {
+list-style:none;
+}
