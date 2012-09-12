@@ -8,13 +8,15 @@ class TaskPage extends Page {
 class TaskPage_Controller extends Page_Controller {
 static $allowed_actions = array(
         'show',
-		'addWorkForm'
+		'addWorkForm',
+		'tasklist'
     ); 
 	public function init() {
 		parent::init();
 		Requirements::css("project/css/project.css");
-			
 		
+		
+			
 	}
 	public function Tasks() {
 	$tasks = Task::get();
@@ -57,6 +59,31 @@ static $allowed_actions = array(
 		}
 				
 	}
+	public function tasklist() {
+	
+		$gridFieldConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+            
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(5),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm()
+		);
+		$fields = new FieldList(
+			$gridField = new GridField('TaskGrid', 'Example grid', new DataList('Task'),  $gridFieldConfig)
+	
+	 );
+	$actions = new FieldList(
+	  
+		);
+		
+		return new Form($this, 'tasklist', $fields,  $actions);
+		}
+	
+	
+	
 	public function addWorkForm() {
 	 		
 			$thetask = $this->getTaskID();

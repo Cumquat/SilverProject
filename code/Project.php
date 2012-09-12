@@ -67,10 +67,20 @@ class Project extends DataObject  {
 //		$ServScore= DataObject::get('Score', "ClassName = 'Service'");
 //		$fields->addFieldToTab("Root.Main", new CheckboxsetField('Scores', 'Service', $ServScore));
 		
-		
+		/*$gridFieldConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+            new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(15),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm()
+		);
+		$gridfield = new GridField("Tasks", "Tasks", $this->Tasks(), $gridFieldConfig);
+		$fields->addFieldToTab('Root.Tasks', $gridfield);*/
 		
 		$fields->addFieldToTab( "Root.Main", $dateField = new DatetimeField( "DueDate", "Date Due" ));
-		
 		$dateField->getDateField()->setConfig('showcalendar', true); 
      	$dateField->getTimeField()->setConfig('showdropdown', true); 
       	$dateField->getDateField()->setConfig('dateformat', 'dd/MM/YYYY');

@@ -74,6 +74,10 @@ class Task extends DataObject  {
     return $total;
   }
    
+   
+   
+   
+   
   function EstimatedHoursRemaining(){
     if ($this->Status == "Completed") {
       return 0;
