@@ -3,7 +3,7 @@ class Score extends DataObject {
 	//database
 	public static $db = array(
 		'Title' => 'Varchar',
-		'Value' => "Enum('0,1,2,3,4,5','0')",
+		'Value' => 'int',
 		'Check' => 'Boolean'
 		
 	

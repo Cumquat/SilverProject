@@ -27,7 +27,7 @@ class Task extends DataObject  {
 	public static $singular_name = 'Task';
 	public static $plural_name = 'Tasks';
 
-	static $default_sort = 'DueDate';
+	static $default_sort = 'Status, DueDate';
 	
 	static $searchable_fields = array(
      	
@@ -43,11 +43,14 @@ class Task extends DataObject  {
 	
 	 function getCMSFields() { 
 		$fields = parent::getCMSFields();
-			$fields->addFieldToTab( "Root.Main", $dateField = new DatetimeField( "DueDate", "Date Due" ));
-			$dateField->getDateField()->setConfig('showcalendar', true); 
-			$dateField->getTimeField()->setConfig('showdropdown', true); 
-			$dateField->getDateField()->setConfig('dateformat', 'dd/MM/YYYY');
-		return $fields; 
+	
+		
+		$fields->addFieldToTab( "Root.Main", $dateField = new DatetimeField( "DueDate", "Date Due" ));
+		
+		$dateField->getDateField()->setConfig('showcalendar', true); 
+     	$dateField->getTimeField()->setConfig('showdropdown', true); 
+      	$dateField->getDateField()->setConfig('dateformat', 'dd/MM/YYYY');
+	return $fields; 
 	}
 	
 	function HoursWorked(){
@@ -100,6 +103,13 @@ class Task extends DataObject  {
 	return ($stat == 'Completed');
 	}
 	
+	public function bak1() {
+	$thedate =  strtotime ($this->DueDate);
+	$expireDate = date ( "Y-m-d" , $thedate );
+	$todaysDate = date ( "Y-m-d" );
+		
+		return ($expireDate < $todaysDate ) ;
+	}
 	
 	
 	

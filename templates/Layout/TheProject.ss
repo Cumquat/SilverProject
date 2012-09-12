@@ -6,6 +6,7 @@
 		<% loop Project %>
 		<div class="TheProject">
 		
+			
 			<table id="overviewtable">
 				<tr>
 				<th>ORIGINAL HOURS ESTIMATED:</th>
@@ -27,12 +28,23 @@
 				</td>
 				</tr>
 			</table>
-			
+			<table id="controls">
+			<tr>
+				<% if Status = "Awaiting-Approval" %><td >$Up.approveForm<% else %><td class="green">Approved<% end_if %></td
+			</tr>
+			<tr>
+				<td><a href="$eLink">Edit</a></td
+			</tr>
+			<tr>
+				<td><a href="add-task">Add Task</a></td
+			</tr>
+		</table>
 			<h2>$Title</h2>
 			<h3>For $Requester.FirstName $Requester.Surname ext: $Requester.DefaultNum</h3>
 			
 			
 			<p>The one liner: <strong> $ShortDescription</strong> </p>
+				<div class="clear"></div>
 				<div class="lhalf">
 					<p >$Description </p>
 					
@@ -87,7 +99,8 @@
 					<li>Type: <strong><% if Type %>$Type<% end_if %></strong></li>
 					<li>Priority: <strong><% if Priority %>$Priority<% end_if %></strong></li>
 					<li>Hours Worked: <strong>$TotalHoursWorked</strong></li>
-					$TotalScore
+					<li>Project Score: <strong>$TheScores</strong></li>
+					
 				</ul>
 				<p>Project Contact: $Owner.FirstName ext: $Owner.DefaultNum</p>
 				</div>
@@ -101,7 +114,7 @@
                 <thead>
                     <tr>
                         <th>Task</th>
-						<th>Description</th>
+						<th>Due Date</th>
                         <th>Status</th>
                         <th>Hours</th>
                     </tr>
@@ -125,20 +138,34 @@
                         </td>
                     </tr>
 					<% else %>
-					<tr>
-					<td>
-                           <a href="$Link">$Title</a>
-                        </td> 
-						<td>
-                           $Description
-                        </td> 
+						<% if bak1 %>
+						<tr class="late">
+							<td>
+							   <a href="$Link">$Title</a>
+							</td> 
+							<td >
+							   $DueDate.Nice
+							</td> 
+							<td >$Status</td>
+							 <td>Worked: $HoursWorked <br />
+								Remaining: $EstimatedHoursRemaining
+							 </td>
+						</tr>
+						<% else %>
 						
-                        <td >$Status</td>
-						 <td>Worked: $HoursWorked <br />
-							Remaining: $EstimatedHoursRemaining
-                          
-                        </td>
-                    </tr>
+						<tr>
+							<td>
+							   <a href="$Link">$Title</a>
+							</td> 
+							<td >
+							   $DueDate.Nice
+							</td> 
+							<td >$Status</td>
+							 <td>Worked: $HoursWorked <br />
+								Remaining: $EstimatedHoursRemaining
+							 </td>
+						</tr>
+						<% end_if %>
 					<% end_if %>
 					<% end_loop %>
 				<% else %>
@@ -157,7 +184,8 @@
 		</div>
 		
 		<% end_loop %>
+		<hr />
+		$addTaskForm
 		
 <div class="clear"></div>
-</div>
-<% include SideBar %>
+

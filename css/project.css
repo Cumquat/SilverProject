@@ -1,7 +1,14 @@
 /**
  * This support file is used to style the WYSIWYG editor in the CMS
  */
+ .button {
+ background:#CCCCCC;
+ padding:10px;
+ border-radius:5px;
+ margin:10px ;
+ }
 #grid {
+
 border:0px solid red;
 }
 #Form_ProjectForm {
@@ -16,7 +23,7 @@ padding:10px;
 
 .standard {
 width:100%;
-
+margin:10px 0;
 }
 .standard td {
 border:1px solid #ccc;
@@ -37,6 +44,18 @@ color:#0066CC;
 font-weight:bold;
 background: #eee;
 }
+#controls {
+float:right;
+border:1px solid #ccc;
+margin:0 10px 0 0;
+padding:10px;
+}
+#controls td{
+text-transform:capitalize;
+text-align:left;
+padding:5px;
+border:1px solid #ccc;
+}
 #overviewtable {
 float:right;
 border:1px solid #ccc;
@@ -51,12 +70,17 @@ text-transform:capitalize;
 text-align:left;
 padding:5px;
 }
+.TheProject {
+width:960px;
+margin:0 auto;
+
+}
 .lhalf {
 float:left;
 width:38%;
 border:1px solid #ccc;
 padding:5px;
-margin:37px 0 0 0;
+margin:0px 0 0 0;
 }
 .rhalf table {
 float:right;
@@ -65,7 +89,8 @@ padding-left:10px;
 padding-right:10px;
 list-style:none;
 border:1px solid #ccc;
-min-height:110px;
+min-height:110px ;
+
 margin: 5px;
 
 }
@@ -73,6 +98,9 @@ margin: 5px;
 text-align:left;
 padding-right:10px;
 
+}
+.rhalf table .title {
+height:23px;
 }
 
 .rhalf {
@@ -92,9 +120,18 @@ clear:both;
 .red {
 color:red;
 }
+.green {
+background:#DAEDD1;
+color:#009966;
+}
 .comp {
 color:#009900;
-background: #E1F9CC;
+background: #E1F9CC !important;
+}
+.late {
+color: #FF0000;
+background: #F8C0BA !important;
+
 }
 
 .info, #Tasks{
@@ -103,10 +140,81 @@ margin:10px ;
 padding:10px 0;
 border:0px solid red;
 }
-.info h3, #Tasks h3 {
+.info h3 {
 text-align:center;
 Border-top:1px solid #ccc;
 }
 .info ul {
 list-style:none;
 }
+.TheTask {
+
+}
+.TaskDesc {
+float:right;
+width:60%;
+}
+#Tasks {
+clear:both;
+Border-top:1px solid #ccc;
+}
+#formbloc h3{
+text-align:center;
+}
+#Form_addWorkForm_HoursSpent {
+
+width:60px;
+}
+#Form_addWorkForm_EstimatedHoursRemaining {
+
+width:60px;
+}
+#Form_addTaskForm_OriginalHourEstimate {
+
+width:90px;
+}
+#Form_addTaskForm_DueDate {
+width:90px;
+}
+.form90 {
+width:90px;
+}
+.form450 {
+width:450px;
+}
+#Form_addTaskForm_Description, #Form_addTaskForm_Title {
+margin:0 auto;
+width:450px;
+}
+.addForm {
+width:940px;
+margin:0 auto;
+}
+.formright {
+float:right;
+}
+.formleft {
+float:left;
+}
+#Form_addProjectForm_Description, #Form_editProjectForm_Description {
+width:600px;
+height:140px;
+}
+.checkboxes ul {
+display: inline-table;
+border-radius:10px;
+background:#D8D8D8;
+list-style:none ;
+padding:5px;
+}
+.checkboxes ul li { 
+display: inline-table;
+padding: .2em 1em;
+ }
+ #Form_approveForm {
+ margin:0;
+ }
+ #Form_approveForm_action_doapprove {
+ background:#FF0000;
+ color:#fff;
+ }

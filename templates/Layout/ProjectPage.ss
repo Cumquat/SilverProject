@@ -4,6 +4,7 @@
 		<div class="content">$Content</div>
 	</article>
 		<div id="grid">
+		<a href="$addLink" class="button">Add Project</a>
 		
 			<table class="standard">
                 <thead>
@@ -12,7 +13,8 @@
 						<th>One liner</th>
 						<th>Requested by</th>
                         <th>Status</th>
-                        
+						<th>Score</th>
+                        <th>Due Date</th>
 						<th>%Complete</th>
                     </tr>
                 </thead>
@@ -31,6 +33,12 @@
                         </td>
 						<td>
                            $Status
+                        </td>
+						<td>
+                           $TheScores
+                        </td> 
+						<td>
+                           $DueDate.Nice
                         </td>    
 						<td><% if $PercentComplete %>$PercentComplete<% else %>Not Started<% end_if %>
                         </td>

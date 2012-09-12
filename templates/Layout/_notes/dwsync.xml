@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="ProjectPage.ss" server="S:/MIS/" local="129913271759422997" remote="129913271750000000" />
-<file name="TheProject.ss" server="S:/MIS/" local="129915000197004923" remote="129915000190000000" />
-<file name="ProjectPage_show.ss" server="S:/MIS/" local="129912201099910621" remote="129912201090000000" />
-<file name="TaskPage.ss" server="S:/MIS/" local="129915000402354923" remote="129915000400000000" />
-<file name="TheTask.ss" server="S:/MIS/" local="129914985862864923" remote="129914985860000000" />
+<file name="ProjectPage.ss" server="S:/MIS/" local="129919118056760832" remote="129919118050000000" />
+<file name="TheProject.ss" server="S:/MIS/" local="129919157943600832" remote="129919157940000000" />
+<file name="ProjectPage_show.ss" server="S:/MIS/" local="129912201090000000" remote="129912201090000000" />
+<file name="TaskPage.ss" server="S:/MIS/" local="129919163133710832" remote="129919163130000000" />
+<file name="TheTask.ss" server="S:/MIS/" local="129919106703170832" remote="129919106700000000" />
+<file name="addTaskPage.ss" server="S:/MIS/" local="129917399650000000" remote="129917399650000000" />
+<file name="AddProject.ss" server="S:/MIS/" local="129917605840000000" remote="129917605840000000" />
+<file name="PojectPage_show.ss" server="S:/MIS/" local="129912201090000000" remote="129912201090000000" />
+<file name="EditProject.ss" server="S:/MIS/" local="129918325886577452" remote="129918325880000000" />
 </dwsync>

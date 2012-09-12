@@ -7,7 +7,7 @@ class Project extends DataObject  {
    		'Title' => 'Varchar()',
 		'ShortDescription' => 'Varchar(70)',
 		'Description' => 'HTMLText',
-		'Status' => "Enum('Active, Completed, Cancelled, Suspended, Standby, Deleted', 'Active')",
+		'Status' => "Enum('Active, Completed, Cancelled, Suspended, Awaiting-Approval, Approved', 'Awaiting-Approval')",
 		'Type' => "Enum('Client, Internal, Private, Idea, N.A.', 'N.A.')",
 		'Priority' => "Enum('A. (High), B. (Medium), C. (Low), N.A.', 'N.A.')",
 		'DueDate' => 'Date'	
@@ -24,6 +24,9 @@ class Project extends DataObject  {
 			'Scores' => 'Score',
 			'Impacts' => 'Impact'
 	); 
+	public static $defaults = array(
+		'Status' => 'Awaiting-Approval'
+		);
 	public static $belongs_many_many = array(); 
 
 	//formatting
@@ -47,7 +50,7 @@ class Project extends DataObject  {
 		
 		
 	); 	
-	
+	 
 	
 	 function getCMSFields() { 
 		$fields = parent::getCMSFields();
@@ -85,6 +88,11 @@ class Project extends DataObject  {
 	function Link(){
 		$page = SiteTree::get_one("ProjectPage");
 		$link = $page->Link() . "show/" . $this->ID;
+		return $link;		
+	}
+	function eLink(){
+		$page = SiteTree::get_one("ProjectPage");
+		$link = $page->Link() . "edit/" . $this->ID;
 		return $link;		
 	}
 	function getTotalHoursWorked(){
@@ -140,12 +148,15 @@ class Project extends DataObject  {
   
 	
 	public function getTheScores() {
-        $score1 = $this->Scores();
-		return $score1;
+        $ProjID = $this->ID;
+		 $results = DB::query("SELECT sum(Value) AS thevalue from Score 
+		 Left JOIN Project_scores on Score.ID = Project_scores.ScoreID 
+		 where Project_scores.ProjectID  = $ProjID ")->value();
+		return $results;
     }
+	 
 	
-	
-	public function ProjectScore() { 
+public function ProjectScore() { 
 		$ProjID = $this->ID;
       $results = DB::query('SELECT  sc.Title AS STitle,  sc.ClassName AS SClassName,
 (
@@ -165,7 +176,7 @@ FROM Score sc ');
       
   		}
 		
-		public function TheImpact() { 
+public function TheImpact() { 
 		$ProjID = $this->ID;
       $results = DB::query('SELECT  ip.Title AS ITitle,  ip.ClassName AS IClassName,
 (

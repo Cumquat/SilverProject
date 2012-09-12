@@ -64,6 +64,35 @@ class WorkLog extends DataObject {
       	$dateField->getDateField()->setConfig('dateformat', 'dd/MM/YYYY');
 	return $fields; 
 	}
-
+public function addWorkForm() {
+	 		
+			$project = Task::get()->map('ID', 'Title');
+				
+			DateField::set_default_config('showcalendar', true);
+			DateField::set_default_config('dateformat', 'dd/MM/YYYY');
+			$fields = new FieldList(
+			
+			new DropDownField( 'TaskID', 'Project', $project),
+            new TextField('Title'),
+           	new DropDownField( "Status", "Status", singleton('Task')->dbObject('Status')->enumValues()),
+			new DateField( 'Date', 'Date'),
+			new NumericField('HourSpent', 'Time Spent in Hours')
+			
+        );
+         
+       $actions = new FieldList(
+			new FormAction('doworkadd', 'Submit')
+		);
+		
+		return new Form($this, 'addWorkForm', $fields,  $actions);
+		}
+	
+	function doworkadd($data, $form) {
+		$submission  = new WorkLog();
+		$submission ->write();
+		$form->saveInto($submission );
+		$submission ->write();
+      	//Controller::curr()->redirectBack();
+		}
 
 }

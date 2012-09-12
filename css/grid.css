@@ -1,0 +1,15 @@
+/**
+ * This support file is used to style the WYSIWYG editor in the CMS
+ */
+#grid {
+border:1px solid red;
+}
+#Form_ProjectForm {
+width:100% !important;
+}
+.ss-gridfield-table {
+width:100%;
+}
+#grid .main {
+padding:10px;
+}

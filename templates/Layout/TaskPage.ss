@@ -29,25 +29,45 @@
                            $Status
                         </td>    
                         <td class="comp">
-                           $DueDate
+                           $DueDate.Nice
                         </td>
                     
                     </tr>
 					<% else %>
-					 <tr>
+					<% if bak1 %>
+						 <tr class="late">
                         <td >
                             <a href="$Link">$Title</a>
                         </td> 
-						<td>
-                          $Project.Title
+						<td >
+                           $Project.Title
                         </td> 
-                        <td>
+                        <td >
                            $Status
                         </td>    
-                        <td>
-                           $DueDate
+                        <td >
+                           $DueDate.Nice
                         </td>
+                    
                     </tr>
+						<% else %>
+						
+						 <tr>
+                        <td >
+                            <a href="$Link">$Title</a>
+                        </td> 
+						<td >
+                           $Project.Title
+                        </td> 
+                        <td >
+                           $Status
+                        </td>    
+                        <td >
+                           $DueDate.Nice
+                        </td>
+                    
+                    </tr>
+						<% end_if %>
 					<% end_if %>
                 <% end_loop %>
                 </tbody>

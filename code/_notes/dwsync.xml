@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="Project.php" server="S:/MIS/" local="129914998390464923" remote="129914998390000000" />
-<file name="MemberProjectExtension.php" server="S:/MIS/" local="129908818391405768" remote="129908818390000000" />
-<file name="ProjectAdmin.php" server="S:/MIS/" local="129914937439384923" remote="129914937430000000" />
-<file name="ProjectPage.php" server="S:/MIS/" local="129914999928134923" remote="129914999920000000" />
-<file name="Task.php" server="S:/MIS/" local="129913285100957017" remote="129913285100000000" />
-<file name="WorkLog.php" server="S:/MIS/" local="129912368969422868" remote="129912368960000000" />
-<file name="TaskPage.php" server="S:/MIS/" local="129915001178044923" remote="129915001170000000" />
-<file name="Score.php" server="S:/MIS/" local="129913255425209739" remote="129913255420000000" />
-<file name="HSEA.php" server="S:/MIS/" local="129913034008705881" remote="129913034000000000" />
-<file name="Financial.php" server="S:/MIS/" local="129913053835425881" remote="129913053830000000" />
-<file name="Service.php" server="S:/MIS/" local="129913053545515881" remote="129913053540000000" />
-<file name="Impact.php" server="S:/MIS/" local="129914936669914923" remote="129914936660000000" />
+<file name="Project.php" server="S:/MIS/" local="129918442966441808" remote="129918442960000000" />
+<file name="MemberProjectExtension.php" server="S:/MIS/" local="129908818390000000" remote="129908818390000000" />
+<file name="ProjectAdmin.php" server="S:/MIS/" local="129914937430000000" remote="129914937430000000" />
+<file name="ProjectPage.php" server="S:/MIS/" local="129919121144450832" remote="129919121140000000" />
+<file name="Task.php" server="S:/MIS/" local="129919160251750832" remote="129919160250000000" />
+<file name="WorkLog.php" server="S:/MIS/" local="129917457540000000" remote="129917457540000000" />
+<file name="TaskPage.php" server="S:/MIS/" local="129917506920000000" remote="129917506920000000" />
+<file name="Score.php" server="S:/MIS/" local="129918432428053699" remote="129918432420000000" />
+<file name="HSEA.php" server="S:/MIS/" local="129913034000000000" remote="129913034000000000" />
+<file name="Financial.php" server="S:/MIS/" local="129913053830000000" remote="129913053830000000" />
+<file name="Service.php" server="S:/MIS/" local="129913053540000000" remote="129913053540000000" />
+<file name="Impact.php" server="S:/MIS/" local="129914936660000000" remote="129914936660000000" />
+<file name="addTaskPage.php" server="S:/MIS/" local="129917445620000000" remote="129917445620000000" />
 </dwsync>
