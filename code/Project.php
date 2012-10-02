@@ -57,6 +57,7 @@ class Project extends DataObject  {
 		
 		$HSEAScore= GroupedList::create(Score::get()->sort('ClassName'));
 		
+		$fields->addFieldToTab("Root.Main", new OptionSetField('Status','Status', singleton('Project')->dbObject('Status')->enumValues()));
 		$fields->addFieldToTab("Root.Main", new CheckboxsetField('Scores', 'Check List', $HSEAScore));
 		$impact= GroupedList::create(Impact::get()->sort('Title'));
 		
@@ -80,13 +81,19 @@ class Project extends DataObject  {
 		$gridfield = new GridField("Tasks", "Tasks", $this->Tasks(), $gridFieldConfig);
 		$fields->addFieldToTab('Root.Tasks', $gridfield);*/
 		
-		$fields->addFieldToTab( "Root.Main", $dateField = new DatetimeField( "DueDate", "Date Due" ));
-		$dateField->getDateField()->setConfig('showcalendar', true); 
-     	$dateField->getTimeField()->setConfig('showdropdown', true); 
-      	$dateField->getDateField()->setConfig('dateformat', 'dd/MM/YYYY');
+		$fields->addFieldToTab( "Root.Main", $dateField = new DateField( "DueDate", "Date Due" ));
+		$dateField->setConfig('showcalendar', true); 
+     	
+      	$dateField->setConfig('dateformat', 'dd/MM/YYYY');
 	return $fields; 
 	}
-	
+	public function overdue() {
+	$thedate =  strtotime ($this->DueDate);
+	$expireDate = date ( "Y-m-d" , $thedate );
+	$todaysDate = date ( "Y-m-d" );
+		
+		return ($expireDate < $todaysDate ) ;
+	}
 	
 	public function pLink(){
 		return  'projects/show/' . $this->ID; 

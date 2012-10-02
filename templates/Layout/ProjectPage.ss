@@ -20,7 +20,15 @@
                 </thead>
                 <tbody>
                 <% loop oldProjects %>
-                    <tr>
+                    <% if $Status = "Awaiting-Approval" %>
+					<tr class="yellow">
+					<% else %>
+						<% if $overdue %>
+							<tr class="late">
+						<% else %>
+							<tr>
+						<% end_if %>
+					<% end_if %>
                         <td>
                             <a href="$Link">$Title</a>
                         </td> 
@@ -31,9 +39,8 @@
                         <td>
                            $Requester.FirstName
                         </td>
-						<td>
-                           $Status
-                        </td>
+						<td>$Status
+                         </td>
 						<td>
                            $TheScores
                         </td> 

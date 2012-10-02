@@ -43,13 +43,13 @@ class Task extends DataObject  {
 	
 	 function getCMSFields() { 
 		$fields = parent::getCMSFields();
-	
+	  	
 		
-		$fields->addFieldToTab( "Root.Main", $dateField = new DatetimeField( "DueDate", "Date Due" ));
+		$fields->addFieldToTab( "Root.Main", $dateField = new DateField( "DueDate", "Date Due" ));
 		
-		$dateField->getDateField()->setConfig('showcalendar', true); 
-     	$dateField->getTimeField()->setConfig('showdropdown', true); 
-      	$dateField->getDateField()->setConfig('dateformat', 'dd/MM/YYYY');
+		$dateField->setConfig('showcalendar', true); 
+     	
+      	$dateField->setConfig('dateformat', 'dd/MM/YYYY');
 	return $fields; 
 	}
 	
@@ -118,7 +118,11 @@ class Task extends DataObject  {
 	
 	
 	
-	
+	function eLink(){
+		$page = SiteTree::get_one("TaskPage");
+		$link = $page->Link() . "edit/" . $this->ID;
+		return $link;		
+	}
 	
 	
 	function Link(){

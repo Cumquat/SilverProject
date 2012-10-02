@@ -76,6 +76,6 @@
 		</div>
 		
 		$addtaskForm
-		$tasklist
+		
 		
 </div>

@@ -35,9 +35,9 @@
 			<tr>
 				<td><a href="$eLink">Edit</a></td
 			</tr>
-			<tr>
+			<!--<tr>
 				<td><a href="add-task">Add Task</a></td
-			</tr>
+			</tr>-->
 		</table>
 			<h2>$Title</h2>
 			<h3>For $Requester.FirstName $Requester.Surname ext: $Requester.DefaultNum</h3>
@@ -102,6 +102,8 @@
 					<li>Project Score: <strong>$TheScores</strong></li>
 					
 				</ul>
+				
+				<p>Requested by: $Requester.FirstName ext: $Requester.DefaultNum</p>
 				<p>Project Contact: $Owner.FirstName ext: $Owner.DefaultNum</p>
 				</div>
 			</div>

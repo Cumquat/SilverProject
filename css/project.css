@@ -119,6 +119,12 @@ clear:both;
 }
 .red {
 color:red;
+
+
+}
+.yellow {
+background:#FFFFCC !important;
+color:#FF9900;
 }
 .green {
 background:#DAEDD1;
@@ -158,6 +164,7 @@ width:60%;
 clear:both;
 Border-top:1px solid #ccc;
 }
+
 #formbloc h3{
 text-align:center;
 }
@@ -196,19 +203,39 @@ float:right;
 .formleft {
 float:left;
 }
-#Form_addProjectForm_Description, #Form_editProjectForm_Description {
+#Form_addProjectForm_Description, #Form_editProjectForm_Description, #Form_editTaskForm_Description {
 width:600px;
-height:140px;
+height:200px;
+}
+.checkboxes {
+float:left;
+
 }
 .checkboxes ul {
-display: inline-table;
+	
 border-radius:10px;
 background:#D8D8D8;
 list-style:none ;
 padding:5px;
+columns: 2 12em; /* two columns, each 12em width */
+column-gap: 1em; /* spacing between columns */
+column-rule: 1px dashed silver; /* border between columns */
+-moz-columns: 2 ; /* for Gecko */
+-moz-column-gap: 0.5em; 
+-moz-column-rule: 1px dashed silver; 
+-webkit-columns: 2 ; /* for WebKit */
+-webkit-column-gap: 0.5em;
+-webkit-column-rule: 1px dashed silver; 
+width:30em;
+}
+
+.checkboxes label {
+display:inline;
+margin-bottom: 5px;
+color: #333;
 }
 .checkboxes ul li { 
-display: inline-table;
+display: block;
 padding: .2em 1em;
  }
  #Form_approveForm {

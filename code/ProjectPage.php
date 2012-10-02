@@ -22,8 +22,10 @@ static $allowed_actions = array(
 	public function init() {
 		parent::init();
 		Requirements::css("project/css/project.css");
-			
-		
+
+	
+
+
 	}
 	public function getoldProjects() {
 	$projects = Project::get()->sort('DueDate');
@@ -94,17 +96,23 @@ static $allowed_actions = array(
 		return $this->renderWith(array('AddProject', 'Page'));
 		
 	}
+	function themachine() {
+	$hostname = $_SERVER['REMOTE_ADDR'];
 	
+	return $hostname;
+	}
 	
 
 	
 	public function addProjectForm() {
 		
-		$project = Score::get()->map('ID', 'Title');
-		$impact = Impact::get()->map('ID', 'Title');
-	 		
+			$project = Score::get()->map('ID', 'Title');
+			$impact = Impact::get()->map('ID', 'Title');
+	 		$requester	= Member::get()->map('ID', 'Title');
+			
 			DateField::set_default_config('showcalendar', true);
 			DateField::set_default_config('dateformat', 'dd/MM/YYYY');
+			
 			
 			$fields = new FieldList(
 			new LiteralField ("LiteralField","<div class='addForm'>" ),
@@ -112,17 +120,19 @@ static $allowed_actions = array(
 					new TextField('Title'),
 					new TextField('ShortDescription','One Liner'),
 					new DateField('DueDate', 'Due Date'),
+					new DropDownField('RequesterID','Requested By',$requester),
 				new LiteralField ("LiteralField","</div>" ),
 					new LiteralField ("LiteralField","<div class='formright'>" ),
 						new TextAreaField('Description','Description'),
 					new LiteralField ("LiteralField","</div>" ),
 				new LiteralField ("LiteralField","<div class='formleft'>" ),
-					
+					new LiteralField ("LiteralField","<div class='info'>" ),
 					new LiteralField ("LiteralField","<div class='checkboxes'>" ),
 						new CheckboxSetField('Scores','Check Boxes',$project),
 					new LiteralField ("LiteralField","</div>" ),
 					new LiteralField ("LiteralField","<div class='checkboxes'>" ),
 						new CheckboxSetField('Impacts','Impacts',$impact),
+					new LiteralField ("LiteralField","</div>" ),
 					new LiteralField ("LiteralField","</div>" ),
 				new LiteralField ("LiteralField","</div>" ),
 			new LiteralField ("LiteralField","</div>" )
@@ -157,7 +167,8 @@ static $allowed_actions = array(
 		$project = $this->getProject();		
 		$score = Score::get()->map('ID', 'Title');
 		$impact = Impact::get()->map('ID', 'Title');
-	 		
+	 	$requester	= Member::get()->map('ID', 'Title');
+		
 			DateField::set_default_config('showcalendar', true);
 			DateField::set_default_config('dateformat', 'dd/MM/YYYY');
 			
@@ -168,6 +179,7 @@ static $allowed_actions = array(
 					new TextField('Title'),
 					new TextField('ShortDescription','One Liner'),
 					new DateField('DueDate', 'Due Date'),
+					new DropDownField('RequesterID','Requested By',$requester),
 				new LiteralField ("LiteralField","</div>" ),
 					new LiteralField ("LiteralField","<div class='formright'>" ),
 						new TextAreaField('Description','Description'),

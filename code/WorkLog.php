@@ -31,7 +31,9 @@ class WorkLog extends DataObject {
 		'HoursSpent'
 	); 		
 
- 
+	 public static $defaults = array(
+	 
+		);
 
 	function getTaskTitle(){
 	  return $this->Task()->Title;
@@ -57,11 +59,11 @@ class WorkLog extends DataObject {
 
  function getCMSFields() { 
 		$fields = parent::getCMSFields();
-		$fields->addFieldToTab( "Root.Main", $dateField = new DateTimeField( "Date", "Date" ));
+		$fields->addFieldToTab( "Root.Main", $dateField = new DateField( "Date", "Date" ));
 		 
-		$dateField->getDateField()->setConfig('showcalendar', true); 
+		$dateField->setConfig('showcalendar', true); 
       
-      	$dateField->getDateField()->setConfig('dateformat', 'dd/MM/YYYY');
+      	$dateField->setConfig('dateformat', 'dd/MM/YYYY');
 	return $fields; 
 	}
 public function addWorkForm() {

@@ -13,7 +13,9 @@
 				<li>Hours Worked:  <strong>$HoursWorked</strong></li>
 				
 			</ul>
+			<a href="$eLink" class="button">Edit</a>
 		</div>
+		<div class="clear"></div>
 		<div id="formblock">
 			
 			$Up.addWorkForm
